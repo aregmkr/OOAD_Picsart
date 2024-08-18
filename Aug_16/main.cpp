@@ -7,12 +7,11 @@ int main()
    	int action = 0;	
 	Bank obj1;
 	std::cout << "Do you want to create bank account ? " << std::endl;
-	std::cout << "Y/N";
+	std::cout << "Y/N" << std::endl;
 	std::cin >> yes_no;
 	std::cin.sync();
 	if (yes_no == 'y' || yes_no == 'Y') {
 		obj1.createAccount();
-	}
 
 	while (true) {
 		std::cout << "For deposit - > 1 | withdraw -> 2 | account info -> 3 | exit -> 0" << std::endl;
@@ -28,16 +27,14 @@ int main()
 				std::cin >> acc_num;
 				std::cout << "Enter value: ";
 				std::cin >> value;
-				obj1.Deposit(0, value);
-				std::cout << "Deposit completed." << std::endl;
+				obj1.Deposit(acc_num, value);
 				break;
 			case 2: 
 				std::cout << "Enter account number: ";
 				std::cin >> acc_num;
 				std::cout << "Enter value: ";
 				std::cin >> value;
-				obj1.Withdraw(0, value);
-				std::cout << "Withdrawal completed." << std::endl;
+				obj1.Withdraw(acc_num, value);
 				break;
 			case 3:
 				obj1.displayAccount(0);
@@ -49,6 +46,9 @@ int main()
 				std::cout << "Invalid" << std::endl;
 				break;
 		}
+	}
+	} else {
+		std::cout << "OK." << std::endl;
 	}
 	return 0;
 }

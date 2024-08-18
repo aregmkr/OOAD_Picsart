@@ -40,6 +40,7 @@ void Bank::Deposit(int acc_num, double value)
 	for (int i = 0; i < count; ++i) {
 		if (acc_arr[i].getAccountNumber() == acc_num) {
 				acc_arr[i].deposit(value);
+				std::cout << "Deposit completed." << std::endl;
 				return ;
 		}
 	}
@@ -51,6 +52,7 @@ void Bank::Withdraw(int acc_num, double value)
 	for (int i = 0; i < count; ++i) {
 		if (acc_arr[i].getAccountNumber() == acc_num) {
 				acc_arr[i].withdraw(value);
+				std::cout << "Withdraw completed." << std::endl;
 				return ;
 		}
 	}
