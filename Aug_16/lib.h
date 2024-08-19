@@ -1,4 +1,4 @@
-#ifndef LIB_A
+#ifndef LIB_H
 #define LIB_H
 
 #include <string>
