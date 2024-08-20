@@ -1,12 +1,15 @@
 #include "lib.h"
 #include <iostream>
-#include <string>
+#include <typeinfo>
 #include <limits>
+
+void check_type(User& obj);
 
 int main()
 {
 	char yes = ' ';
-	User obj1("stalin@ussr.com", "1945$win", "Joseph Stalin");
+	User obj1("stalin@ussr.com", "1945$win", "Joseph Stalin");	
+	check_type(obj1);
 	User obj2;
 
 	std::cout << "Do you want to create new user? " << std::endl;
@@ -27,8 +30,8 @@ int main()
             obj2.setEmail(email);
             std::cout << "Enter user password" << std::endl;
             std::getline(std::cin, password);
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             obj2.setPassword(password);
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		while (true) {
 			int action = 0;
 			std::cout << "1 - > change password, 2 -> update email, 3 -> exit" << std::endl;
@@ -48,4 +51,13 @@ int main()
 	}
 	std::cout << "OK" << std::endl;
 	return 0;
+}
+
+void check_type(User& obj) {
+	const std::type_info& typeinfo = typeid(User);
+	if (typeinfo.name() == typeid(User).name()) {
+		std::cout << "The type of this object is " << typeid(obj).name() << std::endl;
+		return;
+	}
+	std::cout << "The type of this object is not " << typeinfo.name() << std::endl;
 }

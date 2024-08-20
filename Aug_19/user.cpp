@@ -55,7 +55,7 @@ bool User::is_valid_email(std::string email) {
 	bool symbol = false;
 	size_t i = 0;
 	while(email[i] != '\0') {
-		if (email[i] == '&') {
+		if (email[i] == '@') {
 			symbol = true;
 		}
 		++i;
