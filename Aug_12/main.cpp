@@ -4,12 +4,16 @@
 int main()
 {
 	DynamicArray obj1;
-	for (int i = 0; i < 5; ++i) {
-		obj1.push(i+1);
-	}
+	obj1.push(1);
+	obj1.push(4);
+	obj1.push(7);
 	obj1.push(16);
 	DynamicArray obj2(obj1);
-	obj2.display();
-
+	obj1.display();
+	std::cout << "After" << std::endl;
+	DynamicArray obj3 = std::move(obj1);
+	obj3.display();
+	std::cout << "obj1 " << std::endl;
+	obj1.display();
 	return 0;
 }

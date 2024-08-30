@@ -13,9 +13,13 @@ class DynamicArray
 		DynamicArray();
 		DynamicArray(size_t capacity_value);
 		DynamicArray(const DynamicArray& obj);
+		DynamicArray(DynamicArray&& obj) noexcept;
+		DynamicArray& operator=(DynamicArray&& other) noexcept;
 		~DynamicArray();
 		
 		// Methods
-		void push(int value);
+		void push(const int& value);
+		void push(int&& value);
 		void display()const;
+		int getArray(size_t index)const;
 };
