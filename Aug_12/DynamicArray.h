@@ -20,6 +20,7 @@ class DynamicArray
 		// Methods
 		void push(const int& value);
 		void push(int&& value);
+		void pop();
 		void display()const;
 		int getArray(size_t index)const;
 };
